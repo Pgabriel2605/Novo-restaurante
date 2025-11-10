@@ -280,9 +280,19 @@
 }
 
 .reserva{
-  background-color: #000;
+  background-color: #e4dede;
 }
 
 .reserva h2{
   color: #d4af37;
+}
+
+/* Mesas de Reserva */
+
+.texto-mesa{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
 }

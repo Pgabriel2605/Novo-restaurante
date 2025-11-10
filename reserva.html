@@ -45,40 +45,107 @@
 
         <section class="reserva">
             <div class="container py-5">
-                <div class="col-md-9 mx-auto">
-                    <h2 class="mb-3"> Passe seus Dados</h2>
-                <div class="mb-3">
-                    <form action="#" method="post">
-                                <label for="name" class="form-label text-light">Nome</label>
-                                <input type="text" class="form-control bg-dark text-light border-0" id="name"
-                                    placeholder="Digite seu Nome" required>
-                            </div>
+                 <div class="btn-group mb-5 d-flex  justify-content-center" role="group"  aria-label="Filtros de Reserva de mesa">
+                    <button type="button" class="btn btn-outline-dark active" data-filter="all">Todas as mesas</button>
+                    <button type="button" class="btn btn-outline-dark" data-filter="andarUm">1 Andar</button>
+                    <button type="button" class="btn btn-outline-dark" data-filter="andarDois">2 Andar</button>
+                    
+                </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label text-light">Email</label>
-                                <input type="email" class="form-control bg-dark text-light border-0" id="email"
-                                    placeholder="Digite seu Email" required>
-                            </div>
+                <div class="row g-4 text-center">
 
-                            <div class="mb-3">
-                                <label for="message" class="form-label text-light">Senha</label>
-                                <input type="password" class="form-control bg-dark text-light border-0" id="senha" placeholder="Digite uma senha" required>
-                            </div>
+                    <!--MESA 1-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 1</div>
+                        
+                    </div>
 
-                              <div class="mb-3">
-                                <label for="message" class="form-label text-light">Confirme a Senha</label>
-                                <input type="password" class="form-control bg-dark text-light border-0" id="confirme_senha" placeholder="Confirme a senha" required>
-                            </div>
+                     <!--MESA 2-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 2</div>
+                        
+                    </div>
 
-                             
+                     <!--MESA 3-->
+                   <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 3</div>
+                        
+                    </div>
 
+                     <!--MESA 4-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 4</div>
+                        
+                    </div>
 
+                     <!--MESA 5-->
+                    <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 5</div>
+                        
+                    </div>
 
-                            <button type="submit" class="btn w-100"
-                                style="background-color: #d4af37; color: #000; font-weight: 600; border: none;">Enviar</button>
-                        </form>
+                     <!--MESA 6-->
+                   <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 6</div>
+                        
+                    </div>
+
+                      <!--MESA 7-->
+                    <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 7</div>
+                        
+                    </div>
+
+                      <!--MESA 8-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 8</div>
+                        
+                    </div>
+
+                      <!--MESA 9-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"  alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 9</div>
+                        
+                    </div>
+
+                </div>
+           
             </div>
-            </div>
+        
         </section>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+     <script>
+        const buttons = document.querySelectorAll('[data-filter]');
+        const items = document.querySelectorAll('.mesa-item');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
