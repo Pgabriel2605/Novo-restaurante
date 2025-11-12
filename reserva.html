@@ -251,19 +251,22 @@
             });
         }
 
-        btnProximo.addEventListener('click', () => {
-            if (indiceAtual < etapas.length - 1) {
-                indiceAtual++;
-                mostrarEtapa(indiceAtual);
-            }
-        });
+       btnProximo.addEventListener('click', () => {
+    if (indiceAtual < etapas.length - 1) {
+        indiceAtual++;
+        mostrarEtapa(indiceAtual);
+        document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
 
-        btnVoltar.addEventListener('click', () => {
-            if (indiceAtual > 0) {
-                indiceAtual--;
-                mostrarEtapa(indiceAtual);
-            }
-        });
+btnVoltar.addEventListener('click', () => {
+    if (indiceAtual > 0) {
+        indiceAtual--;
+        mostrarEtapa(indiceAtual);
+        document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
+
 
         // --- Calendário de agendamento ---
 const datePicker = document.getElementById('datePicker');
