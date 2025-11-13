@@ -58,171 +58,149 @@
 
             <div id="Etapas">
                 <div class="etapa ativo">
-                    <form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+                    <form action="#" method="post" class="formulario">
+                        <div class="campo">
+                            <label for="inputEmail">Email</label>
+                            <input type="text" class="line-input" placeholder="Digite o Email" id="email">
+
+
+                        </div>
+                        <div class="campo">
+                            <label for="inputNome">Nome</label>
+                            <input type="text" class=" line-input" placeholder="Digite o nome" id="nome">
+                        </div>
+
+                            <div class="campo">
+                                <label for="inputCpf">Cpf</label>
+                                <input type="text" class="line-input" placeholder="Digite o Cpf" id="senha">
+                            </div>
+
+                            <div class="campo">
+                                <label for="inputSenha">Senha</label>
+                                <input type="password" class="line-input" placeholder="Digite a Senha" id="senha">
+                            </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="etapa">
+
+                <div class="btn-group mt-4 mb-5 d-flex  justify-content-center" role="group"
+                    aria-label="Filtros de Reserva de mesa">
+                    <button type="button" class="btn btn-outline-dark active" data-filter="all">Todas as
+                        mesas</button>
+                    <button type="button" class="btn btn-outline-dark" data-filter="andarUm">1 Andar</button>
+                    <button type="button" class="btn btn-outline-dark" data-filter="andarDois">2 Andar</button>
+
                 </div>
 
-                <div class="etapa">
+                <div class="row g-4 text-center">
 
-                    <div class="btn-group mt-4 mb-5 d-flex  justify-content-center" role="group"
-                        aria-label="Filtros de Reserva de mesa">
-                        <button type="button" class="btn btn-outline-dark active" data-filter="all">Todas as
-                            mesas</button>
-                        <button type="button" class="btn btn-outline-dark" data-filter="andarUm">1 Andar</button>
-                        <button type="button" class="btn btn-outline-dark" data-filter="andarDois">2 Andar</button>
+                    <!--MESA 1-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 1</div>
 
                     </div>
 
-                    <div class="row g-4 text-center">
+                    <!--MESA 2-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 2</div>
 
-                        <!--MESA 1-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 1</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 3-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 3</div>
 
-                        <!--MESA 2-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 2</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 4-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 4</div>
 
-                        <!--MESA 3-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 3</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 5-->
+                    <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 5</div>
 
-                        <!--MESA 4-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 4</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 6-->
+                    <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 6</div>
 
-                        <!--MESA 5-->
-                        <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 5</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 7-->
+                    <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 7</div>
 
-                        <!--MESA 6-->
-                        <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 6</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 8-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 8</div>
 
-                        <!--MESA 7-->
-                        <div class="col-md-4 mesa-item" data-category="andarDois" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar (1).png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 7</div>
+                    </div>
 
-                        </div>
+                    <!--MESA 9-->
+                    <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
+                        <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
+                            alt="Mesa jantar">
+                        <div class="texto-mesa fw-bold">Mesa 9</div>
 
-                        <!--MESA 8-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 8</div>
-
-                        </div>
-
-                        <!--MESA 9-->
-                        <div class="col-md-4 mesa-item" data-category="andarUm" style="position: relative;">
-                            <img class="img-fluid rounded " width="120" src="fotos/fotos2/mesa-de-jantar.png"
-                                alt="Mesa jantar">
-                            <div class="texto-mesa fw-bold">Mesa 9</div>
-
-                        </div>
                     </div>
                 </div>
-
-
-
-
-                <div class="etapa">
-    <div class="container py-3">
-
-        <h3 class="mb-4 text-center">Agendamento de Mesa</h3>
-
-        <!-- Seletor de data -->
-        <div class="mb-4">
-            <label for="datePicker" class="form-label">Escolha o dia:</label>
-            <input type="date" id="datePicker" class="form-control">
-        </div>
-
-        <!-- Horários -->
-        <div id="horariosContainer" class="d-flex flex-wrap gap-3"></div>
-
-        <!-- Exibir seleção -->
-        <div class="mt-4">
-            <p>Dia selecionado: <span id="selectedDay">Nenhum</span></p>
-            <p>Horário selecionado: <span id="selectedHour">Nenhum</span></p>
-        </div>
-    </div>
-</div>
-
             </div>
-            <div class="d-flex align-items-center justify-content-center gap-3 ">
-                <button class="btn btn-warning" id="voltar">Voltar</button>
-                <button class="btn btn-primary" id="proximo">Proximo</button>
+
+
+
+
+            <div class="etapa">
+                <div class="container py-3">
+
+                    <h3 class="mb-4 text-center">Agendamento de Mesa</h3>
+
+                    <!-- Seletor de data -->
+                    <div class="mb-4">
+                        <label for="datePicker" class="form-label">Escolha o dia:</label>
+                        <input type="date" id="datePicker" class="form-control">
+                    </div>
+
+                    <!-- Horários -->
+                    <div id="horariosContainer" class="d-flex flex-wrap gap-3"></div>
+
+                    <!-- Exibir seleção -->
+                    <div class="mt-4">
+                        <p>Dia selecionado: <span id="selectedDay">Nenhum</span></p>
+                        <p>Horário selecionado: <span id="selectedHour">Nenhum</span></p>
+                    </div>
+                </div>
             </div>
+
+        </div>
+        <div class="d-flex align-items-center justify-content-center gap-3 ">
+            <button class="btn btn-warning" id="voltar">Voltar</button>
+            <button class="btn btn-success" id="proximo">Proximo</button>
+        </div>
 
         </div>
 
@@ -251,70 +229,70 @@
             });
         }
 
-       btnProximo.addEventListener('click', () => {
-    if (indiceAtual < etapas.length - 1) {
-        indiceAtual++;
-        mostrarEtapa(indiceAtual);
-        document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
+        btnProximo.addEventListener('click', () => {
+            if (indiceAtual < etapas.length - 1) {
+                indiceAtual++;
+                mostrarEtapa(indiceAtual);
+                document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
 
-btnVoltar.addEventListener('click', () => {
-    if (indiceAtual > 0) {
-        indiceAtual--;
-        mostrarEtapa(indiceAtual);
-        document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
+        btnVoltar.addEventListener('click', () => {
+            if (indiceAtual > 0) {
+                indiceAtual--;
+                mostrarEtapa(indiceAtual);
+                document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
 
 
         // --- Calendário de agendamento ---
-const datePicker = document.getElementById('datePicker');
-const horariosContainer = document.getElementById('horariosContainer');
-const selectedDaySpan = document.getElementById('selectedDay');
-const selectedHourSpan = document.getElementById('selectedHour');
+        const datePicker = document.getElementById('datePicker');
+        const horariosContainer = document.getElementById('horariosContainer');
+        const selectedDaySpan = document.getElementById('selectedDay');
+        const selectedHourSpan = document.getElementById('selectedHour');
 
-let selectedDate = null;
-let selectedTime = null;
+        let selectedDate = null;
+        let selectedTime = null;
 
-// Horários de 2 em 2 horas (12h às 22h)
-const horarios = [];
-for (let h = 12; h <= 22; h += 2) {
-    const horaStr = h.toString().padStart(2, '0') + ':00';
-    horarios.push(horaStr);
-}
+        // Horários de 2 em 2 horas (12h às 22h)
+        const horarios = [];
+        for (let h = 12; h <= 22; h += 2) {
+            const horaStr = h.toString().padStart(2, '0') + ':00';
+            horarios.push(horaStr);
+        }
 
-// Renderizar horários
-function renderHorarios() {
-    horariosContainer.innerHTML = '';
-    horarios.forEach(hora => {
-        const btn = document.createElement('button');
-        btn.classList.add('btn', 'btn-outline-primary');
-        btn.textContent = hora;
+        // Renderizar horários
+        function renderHorarios() {
+            horariosContainer.innerHTML = '';
+            horarios.forEach(hora => {
+                const btn = document.createElement('button');
+                btn.classList.add('btn', 'btn-outline-primary');
+                btn.textContent = hora;
 
-        if (hora === selectedTime) btn.classList.add('active');
+                if (hora === selectedTime) btn.classList.add('active');
 
-        btn.addEventListener('click', () => {
-            selectedTime = hora;
+                btn.addEventListener('click', () => {
+                    selectedTime = hora;
+                    renderHorarios();
+                    selectedHourSpan.textContent = selectedTime;
+                });
+
+                horariosContainer.appendChild(btn);
+            });
+        }
+
+        // Evento de mudança de data
+        datePicker.addEventListener('change', (e) => {
+            selectedDate = e.target.value;
+            selectedDaySpan.textContent = selectedDate;
+            selectedTime = null;
+            selectedHourSpan.textContent = 'Nenhum';
             renderHorarios();
-            selectedHourSpan.textContent = selectedTime;
         });
 
-        horariosContainer.appendChild(btn);
-    });
-}
-
-// Evento de mudança de data
-datePicker.addEventListener('change', (e) => {
-    selectedDate = e.target.value;
-    selectedDaySpan.textContent = selectedDate;
-    selectedTime = null;
-    selectedHourSpan.textContent = 'Nenhum';
-    renderHorarios();
-});
-
-// Inicializa
-renderHorarios();
+        // Inicializa
+        renderHorarios();
 
 
 

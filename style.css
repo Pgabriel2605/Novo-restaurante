@@ -280,7 +280,7 @@
 }
 
 .reserva{
-  background-color: #e4dede;
+  background-color: white;
 }
 
 .reserva h2{
@@ -345,4 +345,45 @@
 #horariosContainer button.active {
     background-color: #007bff;
     color: white;
+}
+
+/* input do forms de reserva de mesa */
+
+.formulario{
+   width: 100%;
+   /* define o comprimento máximo das linhas */
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 2rem; /* espaço entre os campos */
+}
+.campo {
+  display: flex;
+  flex-direction: row;  /* coloca lado a lado */
+  align-items: center;  /* alinha verticalmente */
+   /* separa um pouco */
+   /* espaço entre label e input */
+  width: 100%;
+}
+
+/* Define largura da label para alinhamento fixo */
+.campo label {
+  width: 80px; /* todas as labels terão a mesma largura */
+  font-weight: 600;
+  margin-bottom: 0; /* remove margem inferior (não precisa mais em linha) */
+}
+
+/* Faz o input ocupar o espaço restante */
+.line-input {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }

@@ -1,184 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-
-  <style>
-    /* Barra de progresso em blocos */
-    .steps-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .progress-block {
-      width: 80px;
-      height: 6px;
-      background-color: #ddd;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .progress-block.active {
-      background-color: #007bff;
-    }
-
-    /* Ocultar etapas inativas */
-    .etapa {
-      display: none;
-    }
-
-    .etapa.ativo {
-      display: block;
-    }
-
-    .hide {
-      display: none !important;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="logo">Maison Lumière</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto" id="teste">
-            <a class="nav-link" href="menu.html">Menu</a>
-            <a class="nav-link " href="reserva.html">Reserva</a>
-            <a class="nav-link" href="sobre.html">Sobre Nós</a>
-            <a class="nav-link " href="index.html">Contato</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <section class="banner d-flex align-items-center justify-content-center text-center text-light">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Reserva</h1>
+ <form>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
     </div>
-  </section>
-
-  <section class="reserva">
-     <div class="steps-container my-4">
-        <div class="progress-block active"></div>
-        <div class="progress-block"></div>
-        <div class="progress-block"></div>
-      </div>
-    <div class="container py-5">
-
-      <!-- Barra de progresso -->
-     
-
-      <!-- Etapas -->
-      <div id="etapas">
-
-        <!-- Etapa 1 -->
-        <div class="etapa ativo">
-          <p>nknibn</p>
-        </div>
-
-        <!-- Etapa 2 -->
-        <div class="etapa">
-          <div class="btn-group mt-4 mb-5 d-flex justify-content-center" role="group" aria-label="Filtros de Reserva de mesa">
-            <button type="button" class="btn btn-outline-dark active" data-filter="all">Todas as mesas</button>
-            <button type="button" class="btn btn-outline-dark" data-filter="andarUm">1 Andar</button>
-            <button type="button" class="btn btn-outline-dark" data-filter="andarDois">2 Andar</button>
-          </div>
-
-          <div class="row g-4 text-center">
-            <!-- Suas mesas aqui -->
-            <div class="col-md-4 mesa-item" data-category="andarUm">
-              <img class="img-fluid rounded" width="120" src="fotos/fotos2/mesa-de-jantar.png" alt="Mesa jantar">
-              <div class="texto-mesa fw-bold">Mesa 1</div>
-            </div>
-            <!-- ... repete as mesas -->
-          </div>
-        </div>
-
-        <!-- Etapa 3 -->
-        <div class="etapa">
-          <p>dbhjhvdjhdvgdvdj</p>
-        </div>
-
-      </div>
-
-      <!-- Botões -->
-      <div class="d-flex align-items-center justify-content-center gap-3">
-        <button class="btn btn-warning" id="voltar">Voltar</button>
-        <button class="btn btn-primary" id="proximo">Próximo</button>
-      </div>
-
+    <div class="col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // Filtro de mesas
-    const buttons = document.querySelectorAll('[data-filter]');
-    const items = document.querySelectorAll('.mesa-item');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.getAttribute('data-filter');
-
-        items.forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-category') === filter) {
-            item.classList.remove('hide');
-          } else {
-            item.classList.add('hide');
-          }
-        });
-      });
-    });
-
-    // Etapas
-    const etapas = document.querySelectorAll('.etapa');
-    const progressBlocks = document.querySelectorAll('.progress-block');
-    const btnProximo = document.getElementById('proximo');
-    const btnVoltar = document.getElementById('voltar');
-
-    let indiceAtual = 0;
-
-    function mostrarEtapa(indice) {
-      etapas.forEach((etapa, i) => etapa.classList.toggle('ativo', i === indice));
-
-      progressBlocks.forEach((block, i) => {
-        block.classList.toggle('active', i <= indice);
-      });
-    }
-
-    btnProximo.addEventListener('click', () => {
-      if (indiceAtual < etapas.length - 1) {
-        indiceAtual++;
-        mostrarEtapa(indiceAtual);
-      }
-    });
-
-    btnVoltar.addEventListener('click', () => {
-      if (indiceAtual > 0) {
-        indiceAtual--;
-        mostrarEtapa(indiceAtual);
-      }
-    });
-  </script>
-</body>
-
-</html>
+  </div>
+  <div class="col">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="col">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class=" col-md-6">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    
+ 
+</form>
