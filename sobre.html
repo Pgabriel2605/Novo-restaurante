@@ -25,7 +25,7 @@
                         <a class="nav-link" href="menu.html">Menu</a>
                         <a class="nav-link" href="reserva.html">Reserva</a>
                         <a class="nav-link" href="sobre.html">Sobre Nós</a>
-                        <a class="nav-link" href="index.html">Contato</a>
+                        <a class="nav-link" href="#2">Contato</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,110 @@
 
     </main>
 
+    <footer class="text-light" style="background-color: #000;" id="2">
+        <div class="rodape d-flex align-items-center">
+            <div class="container-fluid py-5">
+                <div class="row justify-content-center" style="gap: 40px;">
+
+                    <!-- Coluna 1 -->
+                    <div class="col-md-3 text-start p-3"
+                        style="background-color: #111; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.05);">
+                        <h3 class="text-warning mb-3">Endereço</h3>
+                        <p class="mb-1 text-secondary">28 Jackson Blvd Ste</p>
+                        <p class="mb-1 text-secondary">1020 Chicago</p>
+                        <p class="text-secondary">IL 60604-2340.</p>
+                        <p class="text-secondary mb-1">Telefone: +1 800 559 6580</p>
+                        <p class="text-secondary">E-mail: mail@demolink.org</p>
+                    </div>
+
+                    <!-- Coluna 2 -->
+                    <div class="col-md-3 text-start p-3"
+                        style="background-color: #111; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.05);">
+                        <h3 class="text-warning mb-3">O que as Pessoas Estão Dizendo</h3>
+
+
+                        <div id="depoimentos">
+                            <p class="text-secondary depoimento ativo">"This is one of the best restaurants I have
+                                visited. Everything was excellent. The food was served in a very creative way. Would
+                                recommend to all."</p>
+                            <p class="text-secondary depoimento">"O ambiente é incrível e o atendimento impecável.
+                                Voltarei com certeza!"</p>
+                            <p class="text-secondary depoimento">"Comida maravilhosa e apresentação digna de alta
+                                gastronomia. Parabéns à equipe!"</p>
+                        </div>
+
+                        <p class="fw-semibold text-light mb-2" id="autor">- Alex Merphy</p>
+
+                        <!-- Pontinhos -->
+                        <div class="text-center mt-3">
+                            <span class="ponto ativo" data-index="0">●</span>
+                            <span class="ponto" data-index="1">●</span>
+                            <span class="ponto" data-index="2">●</span>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 3 -->
+                    <div class="col-md-3 text-start p-3"
+                        style="background-color: #111; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.05);">
+                        <h3 class="text-warning mb-3">Fale Conosco</h3>
+                        <form action="#" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label text-light">Nome</label>
+                                <input type="text" class="form-control bg-dark text-light border-0" id="name"
+                                    placeholder="Digite seu Nome" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-light">Email</label>
+                                <input type="email" class="form-control bg-dark text-light border-0" id="email"
+                                    placeholder="Digite seu Email" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label text-light">Mensagem</label>
+                                <textarea class="form-control bg-dark text-light border-0" id="message" rows="4"
+                                    placeholder="Escreva sua mensagem" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn w-100"
+                                >Enviar</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center py-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">
+            © 2025 <span class="ll"> Maison Lumière</span>. Todos os direitos reservados.
+        </div>
+    </footer>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+          const depoimentos = document.querySelectorAll('.depoimento');
+        const pontos = document.querySelectorAll('.ponto');
+        const autor = document.getElementById('autor');
+        const autores = ["- Alex Merphy", "- Julia Roberts", "- Michael Smith"];
+
+        pontos.forEach(ponto => {
+            ponto.addEventListener('click', () => {
+                const index = ponto.dataset.index;
+
+                // Remove classes ativas
+                depoimentos.forEach(d => d.classList.remove('ativo'));
+                pontos.forEach(p => p.classList.remove('ativo'));
+
+                // Adiciona a classe ativa ao clicado
+                depoimentos[index].classList.add('ativo');
+                ponto.classList.add('ativo');
+                autor.textContent = autores[index];
+            });
+        });
+    </script>
 </body>
 
 </html>
