@@ -196,20 +196,26 @@
                 mostrarEtapa(indiceAtual);
                 document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
-                // Última etapa: enviar todos os dados para o servidor
-                fetch("http://localhost:3000/reserva", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(reserva)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    alert(data.message || "Reserva cadastrada com sucesso!");
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert("Erro ao cadastrar a reserva. Tente novamente.");
-                });
+                // Etapa 3: mostrar mensagem de sucesso e resetar para a etapa 1
+                alert("Reserva feita com sucesso!");
+                
+                // Resetar o formulário e seleções
+                reserva.nome = '';
+                reserva.email = '';
+                reserva.cpf = '';
+                reserva.telefone = '';
+                reserva.calendarioDia = '';
+                reserva.calendarioHorario = '';
+                document.getElementById('nome').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('cpf').value = '';
+                document.getElementById('telefone').value = '';
+                document.querySelectorAll('#time-slots li').forEach(li => li.classList.remove('selected'));
+                document.querySelectorAll('.day.selected').forEach(day => day.classList.remove('selected'));
+                
+                indiceAtual = 0;
+                mostrarEtapa(indiceAtual);
+                document.querySelector('.reserva').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
 
@@ -278,25 +284,32 @@
                 calendar.appendChild(dayElement);
             }
 
-            // mostrar horários do dia atual automaticamente
-            fetchHorariosDisponiveis(today);
+            renderTimeSlots();
         }
 
         function selectDay(dayElement, date) {
             document.querySelectorAll('.day.selected').forEach(el => el.classList.remove('selected'));
             dayElement.classList.add('selected');
             selectedCalendarDate = date;
-            fetchHorariosDisponiveis(date);
+            renderTimeSlots();
         }
 
-        function fetchHorariosDisponiveis(date) {
-            const diaFormatado = date.toISOString().split('T')[0]; // YYYY-MM-DD
-            reserva.calendarioDia = date.toLocaleDateString('pt-BR');
+        function renderTimeSlots() {
+            timeSlots.innerHTML = "";
 
-            fetch(`http://localhost:3000/reservas/${diaFormatado}`)
-                .then(res => res.json())
-                .then(data => renderTimeSlots(data.horariosReservados))
-                .catch(err => console.error(err));
+            calendarHorarios.forEach(time => {
+                const li = document.createElement("li");
+                li.classList.add("list-group-item", "mt-2");
+                li.textContent = time;
+
+                li.addEventListener("click", () => {
+                    document.querySelectorAll("#time-slots li").forEach(btn => btn.classList.remove("selected"));
+                    li.classList.add("selected");
+                    reserva.calendarioHorario = time;
+                });
+
+                timeSlots.appendChild(li);
+            });
         }
 
         prevMonthBtn.addEventListener('click', () => {
@@ -316,29 +329,6 @@
             }
             generateCalendar(currentYear, currentMonth);
         });
-
-        function renderTimeSlots(horariosReservados = []) {
-            timeSlots.innerHTML = "";
-
-            calendarHorarios.forEach(time => {
-                const li = document.createElement("li");
-                li.classList.add("list-group-item", "mt-2");
-                li.textContent = time;
-
-                if (horariosReservados.includes(time)) {
-                    li.classList.add("disabled");
-                    li.style.pointerEvents = "none";
-                    li.style.opacity = "0.5";
-                } else {
-                    li.addEventListener("click", () => {
-                        document.querySelectorAll("#time-slots li").forEach(btn => btn.classList.remove("selected"));
-                        li.classList.add("selected");
-                        reserva.calendarioHorario = time;
-                    });
-                }
-                timeSlots.appendChild(li);
-            });
-        }
 
         generateCalendar(currentYear, currentMonth);
     </script>
